@@ -4,13 +4,8 @@ repo_icon: "icon.png"
 repo_description: >-
   Custom Android app repository hosted on GitHub Pages.
 
-# Keystore configuration (references paths used during CI)
+# Keystore configuration
 keystore: "keystore.p12"
 repo_keyalias: "repo_key"
-# Password variables will be supplied via environment variables in CI
-
-# Map fdroidserver requirements to shell environment variables
-keystorepass: "env/KEYSTORE_PASSWORD"
-keypass: "env/KEY_PASSWORD"
 
 allow_unsigned_apks: true
