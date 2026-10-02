@@ -1,0 +1,8 @@
+allow_unsigned_apks: true
+keypass: Mh08s3bQwM#7h!H!gGRnthUj
+keystore: keystore.p12
+keystorepass: Mh08s3bQwM#7h!H!gGRnthUj
+repo_description: Custom Android app repository hosted on GitHub Pages.
+repo_keyalias: repo_key
+repo_name: mcs f-droid repo
+repo_url: https://markcs.github.io/mcs-fdroid/repo
