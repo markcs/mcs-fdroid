@@ -3,13 +3,11 @@ repo_name: "mcs f-droid repo"
 repo_description: >-
   Custom Android app repository hosted on GitHub Pages.
 
-# Keystore configuration
 keystore: "keystore.p12"
 repo_keyalias: "repo_key"
 
-# Dummy values to satisfy fdroidserver's config check.
-# The real values are overridden on the CLI below.
-keystorepass: "dummy"
-keypass: "dummy"
+# Use environment variables
+keystorepass: "env FDROID_KEY_STORE_PASS"
+keypass: "env FDROID_KEY_PASS"
 
 allow_unsigned_apks: true
