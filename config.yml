@@ -8,3 +8,7 @@ repo_description: >-
 keystore: "keystore.p12"
 repo_keyalias: "repo_key"
 # Password variables will be supplied via environment variables in CI
+
+# Map fdroidserver requirements to shell environment variables
+keystorepass: "env/KEYSTORE_PASSWORD"
+keypass: "env/KEY_PASSWORD"
