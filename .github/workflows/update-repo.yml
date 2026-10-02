@@ -25,10 +25,15 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install fdroidserver & Java
+      - name: Install Dependencies, Java & Latest fdroidserver
         run: |
           sudo apt-get update
-          sudo apt-get install -y openjdk-17-jdk fdroidserver
+          # Install Java, Android tools, and required C-libraries
+          sudo apt-get install -y openjdk-17-jdk libxml2-dev libxslt-dev zlib1g-dev
+          
+          # Upgrade pip and install the latest fdroidserver + updated androguard
+          python3 -m pip install --upgrade pip
+          python3 -m pip install fdroidserver androguard
 
       - name: Decode Keystore
         env:
