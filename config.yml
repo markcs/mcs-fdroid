@@ -1,0 +1,10 @@
+repo_url: "https://markcs.github.io/mcs-fdroid/repo"
+repo_name: "mcs f-droid repo"
+repo_icon: "icon.png"
+repo_description: >-
+  Custom Android app repository hosted on GitHub Pages.
+
+# Keystore configuration (references paths used during CI)
+keystore: "keystore.p12"
+repo_keyalias: "repo_key"
+# Password variables will be supplied via environment variables in CI
