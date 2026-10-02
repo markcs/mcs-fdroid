@@ -41,6 +41,20 @@ jobs:
         run: |
           echo "$KEYSTORE_BASE64" | base64 -d > keystore.p12
 
+      - name: Verify Keystore Password & Alias
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        run: |
+          # Tests whether keytool can unlock the keystore with the secret
+          keytool -list -v -keystore keystore.p12 -storepass "$KEYSTORE_PASSWORD" -alias repo_key
+
+      - name: Run fdroid update
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          fdroid update --create-metadata --verbose
+
       - name: Run fdroid update
         env:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
