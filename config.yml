@@ -12,3 +12,5 @@ repo_keyalias: "repo_key"
 # Map fdroidserver requirements to shell environment variables
 keystorepass: "env/KEYSTORE_PASSWORD"
 keypass: "env/KEY_PASSWORD"
+
+allow_unsigned_apks: true
