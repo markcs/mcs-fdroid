@@ -52,11 +52,14 @@ jobs:
         env:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-          # Map directly to the internal variables fdroidserver uses for keytool
           FDROID_KEY_STORE_PASS: ${{ secrets.KEYSTORE_PASSWORD }}
           FDROID_KEY_PASS: ${{ secrets.KEY_PASSWORD }}
         run: |
-          fdroid update --create-metadata --verbose
+          fdroid update \
+            --create-metadata \
+            --verbose \
+            --keystorepass "$KEYSTORE_PASSWORD" \
+            --keypass "$KEY_PASSWORD"
           
       - name: Run fdroid update
         env:
