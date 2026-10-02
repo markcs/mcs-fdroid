@@ -55,7 +55,12 @@ jobs:
           FDROID_KEY_STORE_PASS: ${{ secrets.KEYSTORE_PASSWORD }}
           FDROID_KEY_PASS: ${{ secrets.KEY_PASSWORD }}
         run: |
-          fdroid update --create-metadata --verbose 
+          fdroid update \
+            --create-metadata \
+            --verbose \
+            --keystore keystore.p12 \
+            --storepass "$KEYSTORE_PASSWORD" \
+            --keypass "$KEY_PASSWORD"
             
       - name: Clean up Keystore
         if: always()
