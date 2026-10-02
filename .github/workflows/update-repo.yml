@@ -48,19 +48,28 @@ jobs:
           # Tests whether keytool can unlock the keystore with the secret
           keytool -list -v -keystore keystore.p12 -storepass "$KEYSTORE_PASSWORD" -alias repo_key
 
-      - name: Run fdroid update
+      - name: Configure fdroid with secrets
         env:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-          FDROID_KEY_STORE_PASS: ${{ secrets.KEYSTORE_PASSWORD }}
-          FDROID_KEY_PASS: ${{ secrets.KEY_PASSWORD }}
         run: |
-          fdroid update \
-            --create-metadata \
-            --verbose \
-            --keystore keystore.p12 \
-            --storepass "$KEYSTORE_PASSWORD" \
-            --keypass "$KEY_PASSWORD"
+          python3 << 'EOF'
+          import os
+          import yaml
+          
+          with open('config.yml', 'r') as f:
+              config = yaml.safe_load(f)
+          
+          config['keystorepass'] = os.environ['KEYSTORE_PASSWORD']
+          config['keypass'] = os.environ['KEY_PASSWORD']
+          
+          with open('config.yml', 'w') as f:
+              yaml.dump(config, f)
+          EOF
+
+      - name: Run fdroid update
+        run: |
+          fdroid update --create-metadata --verbose
             
       - name: Clean up Keystore
         if: always()
