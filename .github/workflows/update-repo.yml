@@ -45,8 +45,8 @@ jobs:
         env:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          FDROID_KEY_STORE_PASS: ${{ secrets.KEYSTORE_PASSWORD }}
         run: |
-          # Process APKs, extract metadata, and sign the index
           fdroid update --create-metadata --verbose
 
       - name: Clean up Keystore
