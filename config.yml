@@ -7,8 +7,4 @@ repo_description: >-
 keystore: "keystore.p12"
 repo_keyalias: "repo_key"
 
-# Uses bash-style environment variable expansion supported by Python's fdroidserver
-keystorepass: "$KEYSTORE_PASSWORD"
-keypass: "$KEY_PASSWORD"
-
 allow_unsigned_apks: true
