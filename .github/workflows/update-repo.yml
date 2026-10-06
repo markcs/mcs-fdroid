@@ -17,8 +17,10 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout Code
+      - name: Checkout Code with LFS
         uses: actions/checkout@v4
+        with:
+          lfs: true # Fetches actual binary payloads from LFS storage
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,10 +30,8 @@ jobs:
       - name: Install Dependencies, Java & Latest fdroidserver
         run: |
           sudo apt-get update
-          # Install Java, Android tools, and required C-libraries
           sudo apt-get install -y openjdk-17-jdk libxml2-dev libxslt-dev zlib1g-dev
           
-          # Upgrade pip and install the latest fdroidserver + updated androguard
           python3 -m pip install --upgrade pip
           python3 -m pip install fdroidserver androguard
 
@@ -45,7 +45,6 @@ jobs:
         env:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         run: |
-          # Tests whether keytool can unlock the keystore with the secret
           keytool -list -v -keystore keystore.p12 -storepass "$KEYSTORE_PASSWORD" -alias repo_key
 
       - name: Configure fdroid with secrets
@@ -69,8 +68,14 @@ jobs:
 
       - name: Run fdroid update
         run: |
-          fdroid update --create-metadata --verbose
-            
+          mkdir -p repo
+          if compgen -G "repo/*.apk" > /dev/null; then
+            echo "APKs detected. Updating F-Droid index..."
+            fdroid update --create-metadata --verbose
+          else
+            echo "No APK files found in repo/. Skipping index update."
+          fi
+
       - name: Clean up Keystore
         if: always()
         run: rm -f keystore.p12
@@ -79,5 +84,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./repo
           publish_branch: gh-pages
