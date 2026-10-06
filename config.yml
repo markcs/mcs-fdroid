@@ -1,4 +1,5 @@
 allow_unsigned_apks: true
+apk_url_format: https://stream.campbellsmith.me/apk/{apk}
 keypass: Mh08s3bQwM#7h!H!gGRnthUj
 keystore: keystore.p12
 keystorepass: Mh08s3bQwM#7h!H!gGRnthUj
