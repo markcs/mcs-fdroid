@@ -79,17 +79,14 @@ jobs:
         if: always()
         run: rm -f keystore.p12
 
-      # --- CRITICAL FIX FOR GH-PAGES LFS OVER 100MB ---
       - name: Configure LFS for gh-pages publish directory
         run: |
-          cd repo
           git lfs install
           echo "*.apk filter=lfs diff=lfs merge=lfs -text" > .gitattributes
-      # ------------------------------------------------
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./repo
+          publish_dir: .
           publish_branch: gh-pages
