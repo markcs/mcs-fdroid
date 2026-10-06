@@ -16,10 +16,8 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout Code with LFS
+      - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          lfs: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,7 +28,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y openjdk-17-jdk libxml2-dev libxslt-dev zlib1g-dev
-          
           python3 -m pip install --upgrade pip
           python3 -m pip install fdroidserver androguard
 
@@ -67,24 +64,20 @@ jobs:
 
       - name: Run fdroid update
         run: |
-          mkdir -p repo
-          if compgen -G "repo/*.apk" > /dev/null; then
-            echo "APKs detected. Updating F-Droid index..."
-            fdroid update --create-metadata --verbose
-          else
-            echo "No APK files found in repo/. Skipping index update."
-          fi
+          fdroid update --create-metadata --verbose
 
       - name: Clean up Keystore
         if: always()
         run: rm -f keystore.p12
 
-      - name: Configure LFS for gh-pages publish directory
+      - name: Generate APK list for manual upload
         run: |
-          git lfs install
-          echo "*.apk filter=lfs diff=lfs merge=lfs -text" > .gitattributes
+          echo "APKs to upload to your external server:"
+          find repo -name "*.apk" -type f | while read apk; do
+            echo "  $(basename "$apk")"
+          done
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy metadata to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
