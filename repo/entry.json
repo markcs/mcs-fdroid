@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ad0f7a8aa6d9e1ffa665b56948f910a481ced7cf445900ea1b85ca41d90ee1a
-size 205
+{"timestamp": 1791270795000, "version": 20002, "index": {"name": "/index-v2.json", "sha256": "c6dffcebf5d27b3d6dce61e81826a499d8a5344101689d8b4c5d9477a4713722", "size": 370, "numPackages": 0}, "diffs": {}}

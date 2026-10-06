@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00d1abee2e9103601d3f8406c4d2b28ddcaf5f8e1e9975c96089504bfa44fb98
-size 305
+{"repo": {"timestamp": 1791270795000, "version": 20002, "name": "mcs f-droid repo", "icon": "icon.png", "address": "https://markcs.github.io/mcs-fdroid/repo", "description": "Custom Android app repository hosted on GitHub Pages."}, "requests": {"install": [], "uninstall": []}, "apps": [], "packages": {}}
