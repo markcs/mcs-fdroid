@@ -65,6 +65,62 @@
     "signer": "18f904b5a1904154ebad737952edb8b951cd51b2e7b34920d63f82dba4a0142d",
     "size": 68482076,
     "apkName": "eclipse0.6.45.apk",
-    "added": 1791264851.760927
+    "added": 1791265709.649136
+  },
+  "footy-radio.apk": {
+    "hash": "fa6d4795ffbf354e3e5212216f7ecba5ce4bcc66fad1565f6706bc7c525a1978",
+    "hashType": "sha256",
+    "uses-permission": [
+      [
+        "android.permission.INTERNET",
+        null
+      ],
+      [
+        "android.permission.WAKE_LOCK",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+        null
+      ],
+      [
+        "android.permission.POST_NOTIFICATIONS",
+        null
+      ],
+      [
+        "android.permission.ACCESS_NETWORK_STATE",
+        null
+      ],
+      [
+        "com.markcs.footyradio.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        null
+      ]
+    ],
+    "uses-permission-sdk-23": [],
+    "features": [],
+    "icons_src": {},
+    "icons": {},
+    "antiFeatures": {},
+    "packageName": "com.markcs.footyradio",
+    "versionCode": 127,
+    "name": "Footy Radio",
+    "versionName": "1.0-d0f43ae",
+    "minSdkVersion": 24,
+    "targetSdkVersion": 36,
+    "nativecode": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+    ],
+    "sig": "312c619e1ae191b29a8ab8b3883143e7",
+    "signer": "0976a5377c5578b758a6f98e190c7aadda0e4569d850409fccdc2f1bb1069841",
+    "size": 20451585,
+    "apkName": "footy-radio.apk",
+    "added": 1791265710.275466
   }
 }
