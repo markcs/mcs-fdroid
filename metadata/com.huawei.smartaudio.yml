@@ -1,0 +1,6 @@
+Categories:
+  - Media
+AutoName: "HUAWEI Audio Connect"
+
+# Directs F-Droid clients to fetch binaries directly from GitHub Releases
+WebBase: "https://github.com/markcs/releases/releases/download/HAC-1"

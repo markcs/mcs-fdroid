@@ -93,6 +93,12 @@ jobs:
         if: always()
         run: rm -f keystore.p12
 
+        # --- ADD THIS CLEANUP STEP ---
+      - name: Remove Large APKs Before Pushing Metadata to Git
+        run: |
+          echo "Removing heavy APK binaries so git commit stays under 100MB..."
+          rm -f repo/*.apk
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
