@@ -1,4 +1,4 @@
-repo_url: "https://markcs.github.io/mcs-fdroid/repo"
+repo_url: "https://campbellsmith.me/repo"
 repo_name: "mcs f-droid repo"
 repo_description: >-
   Custom Android app repository hosted on GitHub Pages.
@@ -10,5 +10,5 @@ repo_keyalias: "repo_key"
 keystorepass: "env FDROID_KEY_STORE_PASS"
 keypass: "env FDROID_KEY_PASS"
 
-apk_url_format: https://stream.campbellsmith.me/apk/{apk}
+# apk_url_format: https://stream.campbellsmith.me/apk/{apk}
 allow_unsigned_apks: true
