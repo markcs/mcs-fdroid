@@ -71,7 +71,9 @@ jobs:
         run: |
           mkdir -p repo
           # Fetch the large APK into the repo folder before running fdroid update
-          curl -L -o "repo/HUAWEI_Audio_Connect.2.06.393.apk" "https://stream.campbellsmith.me/apk/HUAWEI_Audio_Connect.2.06.393.apk"
+        curl -fsSL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+            -o "repo/HUAWEI_Audio_Connect.2.06.393.apk" \
+            "https://stream.campbellsmith.me/apk/HUAWEI_Audio_Connect.2.06.393.apk"
 
       - name: Build Repository Index
         env:
