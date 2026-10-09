@@ -1,6 +1,215 @@
 {
   "METADATA_VERSION": 20002,
   "allow_disabled_algorithms": false,
+  "HUAWEI_Audio_Connect.2.06.393.apk": {
+    "hash": "2d594bb77d1af1aa92b99441ae69f8ba8efaff1094079fd0a0558ad6a2bb3249",
+    "hashType": "sha256",
+    "uses-permission": [
+      [
+        "android.permission.BLUETOOTH",
+        null
+      ],
+      [
+        "android.permission.BLUETOOTH_ADMIN",
+        null
+      ],
+      [
+        "android.permission.INTERNET",
+        null
+      ],
+      [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        null
+      ],
+      [
+        "android.permission.ACCESS_FINE_LOCATION",
+        null
+      ],
+      [
+        "huawei.permission.SMART_NOTIFY_FAULT",
+        null
+      ],
+      [
+        "com.huawei.audioaccessorymanager.permission.VERSION_CHECK",
+        null
+      ],
+      [
+        "com.huawei.audioaccessorymanager.permission.ACCESS_BIND_AUDIO_INFO_PROVIDER",
+        null
+      ],
+      [
+        "android.permission.BLUETOOTH_SCAN",
+        null
+      ],
+      [
+        "android.permission.BLUETOOTH_CONNECT",
+        null
+      ],
+      [
+        "android.permission.NEARBY_WIFI_DEVICES",
+        null
+      ],
+      [
+        "android.permission.BLUETOOTH_ADVERTISE",
+        null
+      ],
+      [
+        "android.permission.CAMERA",
+        null
+      ],
+      [
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE_DATA_SYNC",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE",
+        null
+      ],
+      [
+        "android.permission.POST_NOTIFICATIONS",
+        null
+      ],
+      [
+        "android.permission.REQUEST_OBSERVE_COMPANION_DEVICE_PRESENCE",
+        null
+      ],
+      [
+        "android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND",
+        null
+      ],
+      [
+        "android.permission.REQUEST_COMPANION_USE_DATA_IN_BACKGROUND",
+        null
+      ],
+      [
+        "android.permission.REQUEST_COMPANION_START_FOREGROUND_SERVICES_FROM_BACKGROUND",
+        null
+      ],
+      [
+        "android.permission.ACCESS_NETWORK_STATE",
+        null
+      ],
+      [
+        "com.huawei.audioaccessorymanager.permission.ACCESS_BIND_AAM_SERVICE",
+        null
+      ],
+      [
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        null
+      ],
+      [
+        "com.huawei.audiodevicekit.processkeepalive.PERMISSION_SEND_CDM_RESULT_BROADCAST",
+        null
+      ],
+      [
+        "com.oppo.launcher.permission.READ_SETTINGS",
+        null
+      ],
+      [
+        "com.oppo.launcher.permission.WRITE_SETTINGS",
+        null
+      ],
+      [
+        "com.heytap.browser.permission.READ_SETTINGS",
+        null
+      ],
+      [
+        "com.heytap.browser.permission.WRITE_SETTINGS",
+        null
+      ],
+      [
+        "com.vivo.notification.permission.BADGE_ICON",
+        null
+      ],
+      [
+        "com.vivo.abe.permission.launcher.notification.num",
+        null
+      ],
+      [
+        "com.hihonor.android.launcher.permission.READ_SETTINGS",
+        null
+      ],
+      [
+        "com.hihonor.android.launcher.permission.WRITE_SETTINGS",
+        null
+      ],
+      [
+        "com.hihonor.android.launcher.permission.CHANGE_BADGE",
+        null
+      ],
+      [
+        "com.huawei.android.launcher.permission.CHANGE_BADGE",
+        null
+      ],
+      [
+        "com.huawei.smartaudio.notification.PERMISSION_SEND_BROADCAST",
+        null
+      ],
+      [
+        "ohos.permission.GET_BUNDLE_INFO",
+        null
+      ],
+      [
+        "android.permission.LOCAL_MAC_ADDRESS",
+        null
+      ],
+      [
+        "android.permission.ACCESS_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.CHANGE_NETWORK_STATE",
+        null
+      ],
+      [
+        "android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS",
+        null
+      ],
+      [
+        "com.huawei.permission.sec.MDM.v2",
+        null
+      ],
+      [
+        "com.huawei.smartaudio.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        null
+      ],
+      [
+        "com.huawei.permission.ACCESS_HW_KEYSTORE",
+        null
+      ]
+    ],
+    "uses-permission-sdk-23": [],
+    "features": [
+      "android.hardware.bluetooth_le",
+      "android.hardware.bluetooth_le",
+      "android.software.companion_device_setup"
+    ],
+    "icons_src": {},
+    "icons": {},
+    "antiFeatures": {},
+    "packageName": "com.huawei.smartaudio",
+    "versionCode": 20006393,
+    "name": "HUAWEI Audio Connect",
+    "versionName": "2.0.6.393",
+    "minSdkVersion": 26,
+    "targetSdkVersion": 34,
+    "nativecode": [
+      "arm64-v8a"
+    ],
+    "sig": "2139f4859413762d5afc7ba3111e4e76",
+    "signer": "8aa108ed988e678bf703d076bc33502827227d6ee04b24fbc748e9ad22add7fb",
+    "size": 105315797,
+    "apkName": "HUAWEI_Audio_Connect.2.06.393.apk",
+    "added": 1791524882.008693
+  },
   "eclipse0.6.45.apk": {
     "hash": "284177f2d66222548d84091e5106781d7f599f6e5159f4c56619f831dcb6b730",
     "hashType": "sha256",
@@ -65,7 +274,7 @@
     "signer": "18f904b5a1904154ebad737952edb8b951cd51b2e7b34920d63f82dba4a0142d",
     "size": 68482076,
     "apkName": "eclipse0.6.45.apk",
-    "added": 1791516855.899556
+    "added": 1791524882.536962
   },
   "footy-radio.apk": {
     "hash": "fa6d4795ffbf354e3e5212216f7ecba5ce4bcc66fad1565f6706bc7c525a1978",
@@ -121,6 +330,6 @@
     "signer": "0976a5377c5578b758a6f98e190c7aadda0e4569d850409fccdc2f1bb1069841",
     "size": 20451585,
     "apkName": "footy-radio.apk",
-    "added": 1791516856.483605
+    "added": 1791524883.042074
   }
 }
