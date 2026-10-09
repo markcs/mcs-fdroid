@@ -76,7 +76,7 @@ jobs:
           #curl -fsSL -H "x-ci-secret: wUT6MHuIAgZWoxEpkUb33On1" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -o "repo/HUAWEI_Audio_Connect.2.06.393.apk"  "https://stream.campbellsmith.me/apk/HUAWEI_Audio_Connect.2.06.393.apk"
           LATEST_APK=$(gh release view HAC --repo markcs/releases --json assets --jq '.assets[].name | select(endswith(".apk"))' | sort -V | tail -n1)
           echo "Downloading latest version: $LATEST_APK"
-          gh release download HAC --repo markcs/releases --pattern "$LATEST_APK"  --dir repo/
+          gh release download HAC --repo markcs/releases --pattern "$LATEST_APK"  --clobber --dir repo/
 
       - name: Build Repository Index
         env:
