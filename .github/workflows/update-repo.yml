@@ -68,6 +68,8 @@ jobs:
           EOF
 
       - name: Download Large APK for Indexing
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           mkdir -p repo
           # Fetch the large APK into the repo folder before running fdroid update
