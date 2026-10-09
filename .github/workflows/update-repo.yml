@@ -67,6 +67,19 @@ jobs:
               yaml.dump(config, f)
           EOF
 
+      - name: Download Large APK for Indexing
+        run: |
+          mkdir -p repo
+          # Fetch the large APK into the repo folder before running fdroid update
+          curl -L -o "https://stream.campbellsmith.me/apk/HUAWEI_Audio_Connect.2.06.393.apk" "https://github.com/user/repo/releases/download/v1.0.0/app-release.apk"
+
+      - name: Build Repository Index
+        env:
+          KEYPASS: ${{ secrets.FDROID_KEYPASS }}
+          STOREPASS: ${{ secrets.FDROID_STOREPASS }}
+        run: |
+          fdroid update --create-metadata
+
       - name: Run fdroid update
         run: |
           fdroid update --create-metadata --verbose
