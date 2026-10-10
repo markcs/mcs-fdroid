@@ -72,7 +72,7 @@ jobs:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           mkdir -p repo
-          rm -f repo/*.apk
+          rm -f repo/HUAWEI*.apk
           
           # 1. Find the latest release tag starting with "HAC"
           LATEST_TAG=$(gh release list --repo markcs/releases --json tagName,isLatest --jq '[.[] | select(.tagName | startswith("HAC"))][0].tagName')
@@ -104,7 +104,7 @@ jobs:
       - name: Remove Large APKs Before Pushing Metadata to Git
         run: |
           echo "Removing heavy APK binaries so git commit stays under 100MB..."
-          rm -f repo/*.apk
+          rm -f repo/HUAWEI*.apk
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
