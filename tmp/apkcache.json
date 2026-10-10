@@ -1,8 +1,8 @@
 {
   "METADATA_VERSION": 20002,
   "allow_disabled_algorithms": false,
-  "HUAWEI_Audio_Connect.2.06.393.apk": {
-    "hash": "2d594bb77d1af1aa92b99441ae69f8ba8efaff1094079fd0a0558ad6a2bb3249",
+  "HUAWEI_Audio_Connect_2.07.321.apk": {
+    "hash": "38226563e93a3e38e1e7490e0851fa1a11e318c281f6d8d977bbc7158e2123a4",
     "hashType": "sha256",
     "uses-permission": [
       [
@@ -35,6 +35,10 @@
       ],
       [
         "com.huawei.audioaccessorymanager.permission.ACCESS_BIND_AUDIO_INFO_PROVIDER",
+        null
+      ],
+      [
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
         null
       ],
       [
@@ -98,7 +102,7 @@
         null
       ],
       [
-        "com.huawei.audioaccessorymanager.permission.ACCESS_BIND_AAM_SERVICE",
+        "android.permission.READ_PRIVILEGED_PHONE_STATE",
         null
       ],
       [
@@ -107,6 +111,10 @@
       ],
       [
         "com.huawei.audiodevicekit.processkeepalive.PERMISSION_SEND_CDM_RESULT_BROADCAST",
+        null
+      ],
+      [
+        "com.huawei.audioaccessorymanager.permission.ACCESS_BIND_AAM_SERVICE",
         null
       ],
       [
@@ -196,9 +204,9 @@
     "icons": {},
     "antiFeatures": {},
     "packageName": "com.huawei.smartaudio",
-    "versionCode": 20006393,
+    "versionCode": 20007321,
     "name": "HUAWEI Audio Connect",
-    "versionName": "2.0.6.393",
+    "versionName": "2.0.7.321",
     "minSdkVersion": 26,
     "targetSdkVersion": 34,
     "nativecode": [
@@ -206,9 +214,9 @@
     ],
     "sig": "2139f4859413762d5afc7ba3111e4e76",
     "signer": "8aa108ed988e678bf703d076bc33502827227d6ee04b24fbc748e9ad22add7fb",
-    "size": 105315797,
-    "apkName": "HUAWEI_Audio_Connect.2.06.393.apk",
-    "added": 1791628969.083015
+    "size": 128263127,
+    "apkName": "HUAWEI_Audio_Connect_2.07.321.apk",
+    "added": 1791629338.581872
   },
   "eclipse0.6.45.apk": {
     "hash": "284177f2d66222548d84091e5106781d7f599f6e5159f4c56619f831dcb6b730",
@@ -274,7 +282,7 @@
     "signer": "18f904b5a1904154ebad737952edb8b951cd51b2e7b34920d63f82dba4a0142d",
     "size": 68482076,
     "apkName": "eclipse0.6.45.apk",
-    "added": 1791628969.766766
+    "added": 1791629339.293088
   },
   "footy-radio.apk": {
     "hash": "fa6d4795ffbf354e3e5212216f7ecba5ce4bcc66fad1565f6706bc7c525a1978",
@@ -330,6 +338,6 @@
     "signer": "0976a5377c5578b758a6f98e190c7aadda0e4569d850409fccdc2f1bb1069841",
     "size": 20451585,
     "apkName": "footy-radio.apk",
-    "added": 1791628970.349973
+    "added": 1791629339.885013
   }
 }
