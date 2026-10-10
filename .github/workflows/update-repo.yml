@@ -72,7 +72,8 @@ jobs:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           mkdir -p repo
-
+          rm -f repo/*.apk
+          
           # 1. Find the latest release tag starting with "HAC"
           LATEST_TAG=$(gh release list --repo markcs/releases --json tagName,isLatest --jq '[.[] | select(.tagName | startswith("HAC"))][0].tagName')
           echo "Latest release tag found: $LATEST_TAG"
