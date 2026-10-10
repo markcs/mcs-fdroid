@@ -72,12 +72,18 @@ jobs:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           mkdir -p repo
-          # Fetch the large APK into the repo folder before running fdroid update
-          #curl -fsSL -H "x-ci-secret: wUT6MHuIAgZWoxEpkUb33On1" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -o "repo/HUAWEI_Audio_Connect.2.06.393.apk"  "https://stream.campbellsmith.me/apk/HUAWEI_Audio_Connect.2.06.393.apk"
-          LATEST_APK=$(gh release view HAC --repo markcs/releases --json assets --jq '.assets[].name | select(endswith(".apk"))' | sort -V | tail -n1)
-          echo "Downloading latest version: $LATEST_APK"
-          gh release download HAC --repo markcs/releases --pattern "$LATEST_APK"  --clobber --dir repo/
 
+          # 1. Find the latest release tag starting with "HAC"
+          LATEST_TAG=$(gh release list --repo markcs/releases --json tagName,isLatest --jq '[.[] | select(.tagName | startswith("HAC"))][0].tagName')
+          echo "Latest release tag found: $LATEST_TAG"
+
+          # 2. Get the highest versioned APK inside that tag
+          LATEST_APK=$(gh release view "$LATEST_TAG" --repo markcs/releases --json assets --jq '.assets[].name | select(endswith(".apk"))' | sort -V | tail -n1)
+          echo "Downloading latest version: $LATEST_APK"
+
+          # 3. Download the APK
+          gh release download "$LATEST_TAG" --repo markcs/releases --pattern "$LATEST_APK" --clobber --dir repo/
+          
       - name: Build Repository Index
         env:
           KEYPASS: ${{ secrets.FDROID_KEYPASS }}
